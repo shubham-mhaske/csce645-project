@@ -36,6 +36,13 @@
         header {
             text-align: center;
             margin-bottom: 3rem;
+
+            /* Glass effect */
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
         header .icon {
             font-size: 3rem;
@@ -72,15 +79,6 @@
             border: 1px solid var(--slate-200);
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-
-            /* Fade-in effect */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .card.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         h2 {
             font-size: 1.25rem;
@@ -220,7 +218,6 @@
 
         <section class="card">
             <h2>List of Goals</h2>
-            <p>The project is structured into three phases, aligning with the course's key deadlines.</p>
     
             <h3>Goals for First Update (due Friday, October 31)</h3>
             <ul>
@@ -251,16 +248,5 @@
             <p>[Shubham Vikas Mhaske]</p>
         </footer>
     </div>
-
-    <!-- Fade-in animation JS -->
-    <script>
-        const cards = document.querySelectorAll('.card');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15 });
-        cards.forEach(card => observer.observe(card));
-    </script>
 </body>
 </html>
