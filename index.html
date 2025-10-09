@@ -47,6 +47,18 @@
             font-weight: 800;
             color: var(--slate-900);
             margin-bottom: 0.5rem;
+
+            /* Cool animated gradient */
+            background: linear-gradient(90deg, var(--sky-500), #22d3ee, #0ea5e9);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 6s ease infinite;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header p {
             font-size: 1.125rem;
@@ -60,6 +72,15 @@
             border: 1px solid var(--slate-200);
             padding: 2.5rem;
             margin-bottom: 2.5rem;
+
+            /* Fade-in effect */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         h2 {
             font-size: 1.25rem;
@@ -230,5 +251,16 @@
             <p>[Shubham Vikas Mhaske]</p>
         </footer>
     </div>
+
+    <!-- Fade-in animation JS -->
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+        cards.forEach(card => observer.observe(card));
+    </script>
 </body>
 </html>
