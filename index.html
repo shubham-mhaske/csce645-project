@@ -1,265 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Proposal: High-Fidelity Mesh Improvement</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --slate-50: #f8fafc;
-            --slate-100: #f1f5f9;
-            --slate-200: #e2e8f0;
-            --slate-400: #94a3b8;
-            --slate-600: #475569;
-            --slate-700: #334155;
-            --slate-800: #1e293b;
-            --slate-900: #0f172a;
-            --sky-500: #0ea5e9;
-            --sky-600: #0284c7;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--slate-700);
-            background-color: var(--slate-50);
-            background-image: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 20%);
-            margin: 0;
-            padding: 2rem 1rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-
-            /* Glass effect */
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        header .icon {
-            font-size: 3rem;
-            color: var(--sky-500);
-            margin-bottom: 0.5rem;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--slate-900);
-            margin-bottom: 0.5rem;
-
-            /* Cool animated gradient */
-            background: linear-gradient(90deg, var(--sky-500), #22d3ee, #0ea5e9);
-            background-size: 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientFlow 6s ease infinite;
-        }
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        header p {
-            font-size: 1.125rem;
-            color: var(--slate-600);
-s           margin-top: 0;
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--slate-200);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--sky-600);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-  s         margin: 0 0 1.5rem 0;
-            border-bottom: 1px solid var(--slate-200);
-            padding-bottom: 0.75rem;
-        }
-        h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--slate-800);
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        p, ul, ol {
-            margin-bottom: 1rem;
-s           color: var(--slate-600);
-        }
-        ul, ol {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 0.75rem;
-        }
-        strong {
-            color: var(--slate-800);
-            font-weight: 600;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        th, td {
-          s text-align: left;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--slate-200);
-section         }
-        th {
-            background-color: var(--slate-100);
-            font-weight: 600;
-            color: var(--slate-700);
-        }
-        td {
-           color: var(--slate-600);
-        }
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--slate-200);
-            color: var(--slate-400);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal: High-Fidelity Mesh Improvement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --sky-500: #0ea5e9;
+            --sky-600: #0284c7;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--slate-700);
+            background-color: var(--slate-50);
+            background-image: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 20%);
+            margin: 0;
+            padding: 2rem 1rem;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        header .icon {
+            font-size: 3rem;
+            color: var(--sky-500);
+            margin-bottom: 0.5rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--sky-500), #22d3ee, #0ea5e9);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 6s ease infinite;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header p {
+            font-size: 1.125rem;
+            color: var(--slate-600);
+            margin-top: 0;
+        }
+        .quick-links {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .quick-links a {
+            color: var(--sky-600);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--sky-500);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .quick-links a:hover {
+            background-color: var(--sky-500);
+            color: #fff;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--slate-200);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sky-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 1.5rem 0;
+            border-bottom: 1px solid var(--slate-200);
+            padding-bottom: 0.75rem;
+        }
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--slate-800);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        p, ul, ol {
+            margin-bottom: 1rem;
+            color: var(--slate-600);
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.75rem;
+        }
+        strong {
+            color: var(--slate-800);
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--slate-200);
+        }
+        th {
+            background-color: var(--slate-100);
+            font-weight: 600;
+            color: var(--slate-700);
+        }
+        td {
+           color: var(--slate-600);
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-200);
+            color: var(--slate-400);
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="icon">&#129504;</div>
-            <h1>High-Fidelity Mesh Improvement for MRI-Derived Anatomical Models</h1>
-            <p>Project Proposal</p>
-        </header>
+    <div class="container">
+        <header>
+            <div class="icon">&#129504;</div>
+            <h1>High-Fidelity Mesh Improvement for MRI-Derived Anatomical Models</h1>
+            <p>Project Proposal</p>
+            <div class="quick-links">
+                <a href="#documents">📄 View Project Documents</a>
+            </div>
+        </header>
 
-        <section class="card">
-            <h2>Summary</h2>
-section             <h3>Description of Problem</h3>
-            <p>
-                Standard algorithms for generating 3D surfaces from volumetric medical data, such as Marching Cubes, produce meshes that suffer from severe geometric and topological artifacts. These models are direct triangulations of a discrete voxel grid, resulting in noisy surfaces, prominent "staircase" effects, and poorly conditioned triangles. Such low-fidelity geometric representations are fundamentally unsuitable for the precision required in modern computational medicine.
-            </p>
-    
-            <h3>Importance of Problem</h3>
-            <p>
-                The safety and efficacy of computer-assisted surgical planning, particularly in neurosurgery, depend on the accuracy of the patient's "digital twin." When a surgical plan is based on a raw, geometrically flawed model, these inaccuracies can propagate through the entire clinical workflow, potentially compromising registration accuracy, simulation results, and ultimately, patient outcomes. This project addresses the critical need for a robust geometric pipeline that can transform these raw outputs into high-fidelity, analysis-ready models, thereby strengthening the foundation of the entire surgical planning process.
-            </p>
-    
-            <h3>Proposed Work</h3>
-            <p>
-                This project will design, implement, and evaluate a geometric processing pipeline to significantly improve the quality of 3D meshes derived from MRI data. The pipeline will take a raw, artifact-laden mesh as input and apply a sequence of advanced mesh processing operations:
-            </p>
-            <ol>
-                <li><strong>Variational Smoothing:</strong> An advanced, feature-preserving smoothing algorithm (e.g., Taubin smoothing) will be implemented to eliminate high-frequency noise and discretization artifacts while rigorously preserving the model's overall volume and critical anatomical features.</li>
-                <li><strong>Mesh Simplification:</strong> A Quadric Error Metric (QEM) based simplification algorithm will be implemented to intelligently reduce the mesh's complexity, creating a computationally efficient model suitable for real-time visualization and interaction.</li>
-            </ol>
-            <p>
-                The pipeline's effectiveness will be validated through a rigorous quantitative analysis of mesh quality metrics and compelling qualitative "before-and-after" visualizations.
-s           </p>
-    
-            <h3>Originality</h3>
-            <p>
-                While the component algorithms are established, the originality of this work arises from the <strong>novel synthesis and quantitative evaluation of these techniques on a uniquely challenging class of medical data: brain models</strong>. This project provides a comparative study to establish a "best-practices" framework for improving the geometric fidelity of complex, irregular biological structures.
-            </p>
-    
-        t   <h3>Relationship to Geometric Modeling</h3>
-            <p>
-                This project directly addresses core geometric modeling tasks, including mesh representation, smoothing, simplification, and the analysis of geometric quality. It applies these foundational principles to the challenging domain of anatomical reconstruction, demonstrating how geometric modeling is critical for creating the high-fidelity digital models required in modern medicine.
-            </p>
-        </section>
-
-        <section class="card">
-            <h2>Evaluation Metrics</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-Note:                     <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Triangle Aspect Ratio</td>
-                        <td>Assess mesh quality improvement</td>
-                    </tr>
-                    <tr>
-C                      <td>Hausdorff Distance (mm)</td>
-s                     <td>Measure geometric deviation from original mesh</td>
-                    </tr>
-                    <tr>
-                        <td>Mean Curvature Error</td>
-                    Of   <td>Evaluate preservation of anatomical features</td>
-                    </tr>
-                    <tr>
-                        <td>Volume Change (%)</td>
-                        <td>Ensure minimal shrinkage or expansion</td>
-  s                 </tr>
-                    <tr>
-s                     <td>Visual Inspection</td>
-                        <td>Compare “before-and-after” surfaces</td>
-s                 </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="card">
-            <h2>List of Goals</h2>
-s     
-            <h3>Goals for First Update (due Friday, October 31)</h3>
-            <ul>
-                <li>Complete a thorough <strong>literature review</strong> of mesh smoothing and simplification methods.</li>
-                <li>Establish a reproducible <strong>data-to-mesh pipeline</strong>: download the public BraTS 2023 dataset and implement a script to generate a raw 3D tumor mesh using the Marching Cubes algorithm.</li>
-It              <li>Implement a baseline <strong>quantitative analysis suite</strong> to compute and visualize initial mesh quality metrics (e.g., triangle quality histograms, surface area, volume).</li>
-            </ul>
-    
-            <h3>Goals for Second Update (due Monday, November 24)</h3>
-            <ul>
-                <li>Complete the implementation and testing of a baseline <strong>Laplacian smoothing</strong> operator for comparison.</li>
-April s           <li>Complete the core implementation of the advanced <strong>Taubin smoothing</strong> algorithm.</li>
-                <li>Produce a <strong>comparative analysis</strong> of the two smoothing methods, rigorously evaluating volume preservation and noise reduction.</li>
-            </ul>
-    
-            <h3>Goals for Final Project (due Tuesday, December 16)</h3>
-            <ul>
-                <li>Complete the implementation and integration of the <strong>Quadric Error Metric (QEM)</strong> simplification algorithm.</li>
-A               <li>Run the full pipeline on multiple meshes from the BraTS dataset to demonstrate robustness.</li>
-            This   <li>Generate all final deliverables, including a comprehensive quantitative evaluation, high-quality "before-and-after" visualizations, and a well-documented code repository.</li>
-                <li>Complete the final written report and prepare the oral presentation.</li>
-                <li><strong>Potential Extension:</strong> If time permits, explore a simple constrained smoothing method to explicitly preserve user-defined anatomical landmarks.</li>
-A s         </ul>
-        </section>
-        
         <section class="card">
-            <h2>Project Deliverables</h2>
-            <ul>
-                <li>
-                    <strong>Project Update 1 (Oct 31):</strong> 
-                    <a href="GM_update_1.pdf" target="_blank" rel="noopener noreferrer">Read the full update</a>
-                </li>
-                <li>
-                    <strong>Literature Review (Oct 31):</strong> 
-                    <a href="Geometric_Modeling_project_literature_review-2.pdf" target="_blank" rel="noopener noreferrer">Read the full review</a>
-                </li>
-            </ul>
+            <h2>Summary</h2>
+            <h3>Description of Problem</h3>
+            <p>
+                Standard algorithms for generating 3D surfaces from volumetric medical data, such as Marching Cubes, produce meshes that suffer from severe geometric and topological artifacts...
+            </p>
+            <!-- (Your existing summary content stays exactly the same) -->
         </section>
-                <footer>
-            <p>CSCE 645: Geometric Modeling</p>
-            <p>[Shubham Vikas Mhaske]</p>
-  Of     </footer>
-    </div>
+
+        <section class="card">
+            <h2>Evaluation Metrics</h2>
+            <!-- (Your existing table and content here) -->
+        </section>
+
+        <section class="card">
+            <h2>List of Goals</h2>
+            <!-- (Your existing goals and lists here) -->
+        </section>
+
+        <!-- 🔽 New section for embedded PDFs -->
+        <section class="card" id="documents">
+            <h2>Project Documents</h2>
+
+            <h3>Update 1 (October 31, 2025)</h3>
+            <p>
+                The first project update summarizes progress toward the initial goals, including pipeline implementation and baseline analysis.
+                You can view or download the full document below.
+            </p>
+            <iframe 
+                src="GM_update_1.pdf" 
+                width="100%" 
+                height="500px" 
+                style="border: 1px solid var(--slate-200); border-radius: 8px;">
+            </iframe>
+            <p style="text-align: right; margin-top: 0.5rem;">
+                <a href="GM_update_1.pdf" target="_blank" style="color: var(--sky-600); font-weight: 600; text-decoration: none;">
+                    🔗 Open full PDF in new tab
+                </a>
+            </p>
+
+            <h3>Literature Review (October 31, 2025)</h3>
+            <p>
+                This document provides an in-depth review of algorithms and methods forming the theoretical foundation for the project pipeline.
+            </p>
+            <iframe 
+                src="Geometric_Modeling_project_literature_review-2.pdf" 
+                width="100%" 
+                height="500px" 
+                style="border: 1px solid var(--slate-200); border-radius: 8px;">
+            </iframe>
+            <p style="text-align: right; margin-top: 0.5rem;">
+                <a href="Geometric_Modeling_project_literature_review-2.pdf" target="_blank" style="color: var(--sky-600); font-weight: 600; text-decoration: none;">
+                    🔗 Open full PDF in new tab
+                </a>
+            </p>
+        </section>
+
+        <footer>
+            <p>CSCE 645: Geometric Modeling</p>
+            <p>[Shubham Vikas Mhaske]</p>
+        </footer>
+    </div>
 </body>
 </html>
