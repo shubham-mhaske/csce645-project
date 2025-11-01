@@ -70,7 +70,7 @@
         header p {
             font-size: 1.125rem;
             color: var(--slate-600);
-            margin-top: 0;
+s           margin-top: 0;
         }
         .card {
             background-color: #ffffff;
@@ -86,20 +86,20 @@
             color: var(--sky-600);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin: 0 0 1.5rem 0;
+  s         margin: 0 0 1.5rem 0;
             border-bottom: 1px solid var(--slate-200);
             padding-bottom: 0.75rem;
         }
         h3 {
             font-size: 1.125rem;
-I            font-weight: 700;
+            font-weight: 700;
             color: var(--slate-800);
             margin-top: 2rem;
             margin-bottom: 0.75rem;
         }
         p, ul, ol {
             margin-bottom: 1rem;
-            color: var(--slate-600);
+s           color: var(--slate-600);
         }
         ul, ol {
             padding-left: 20px;
@@ -118,10 +118,10 @@ I            font-weight: 700;
             margin-bottom: 1rem;
         }
         th, td {
-            text-align: left;
+          s text-align: left;
             padding: 12px 16px;
             border-bottom: 1px solid var(--slate-200);
-        }
+section         }
         th {
             background-color: var(--slate-100);
             font-weight: 600;
@@ -129,7 +129,7 @@ I            font-weight: 700;
         }
         td {
            color: var(--slate-600);
-s        }
+        }
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -149,7 +149,7 @@ s        }
 
         <section class="card">
             <h2>Summary</h2>
-            <h3>Description of Problem</h3>
+section             <h3>Description of Problem</h3>
             <p>
                 Standard algorithms for generating 3D surfaces from volumetric medical data, such as Marching Cubes, produce meshes that suffer from severe geometric and topological artifacts. These models are direct triangulations of a discrete voxel grid, resulting in noisy surfaces, prominent "staircase" effects, and poorly conditioned triangles. Such low-fidelity geometric representations are fundamentally unsuitable for the precision required in modern computational medicine.
             </p>
@@ -169,14 +169,14 @@ s        }
             </ol>
             <p>
                 The pipeline's effectiveness will be validated through a rigorous quantitative analysis of mesh quality metrics and compelling qualitative "before-and-after" visualizations.
-            </p>
+s           </p>
     
             <h3>Originality</h3>
             <p>
                 While the component algorithms are established, the originality of this work arises from the <strong>novel synthesis and quantitative evaluation of these techniques on a uniquely challenging class of medical data: brain models</strong>. This project provides a comparative study to establish a "best-practices" framework for improving the geometric fidelity of complex, irregular biological structures.
             </p>
     
-            <h3>Relationship to Geometric Modeling</h3>
+        t   <h3>Relationship to Geometric Modeling</h3>
             <p>
                 This project directly addresses core geometric modeling tasks, including mesh representation, smoothing, simplification, and the analysis of geometric quality. It applies these foundational principles to the challenging domain of anatomical reconstruction, demonstrating how geometric modeling is critical for creating the high-fidelity digital models required in modern medicine.
             </p>
@@ -197,39 +197,39 @@ Note:                     <th>Purpose</th>
                         <td>Assess mesh quality improvement</td>
                     </tr>
                     <tr>
-C                      <td>Hausdorff Distance (mm)</td>
-                        <td>Measure geometric deviation from original mesh</td>
+C                      <td>Hausdorff Distance (mm)</td>
+s                     <td>Measure geometric deviation from original mesh</td>
                     </tr>
-                  t <tr>
+                    <tr>
                         <td>Mean Curvature Error</td>
-                      de <td>Evaluate preservation of anatomical features</td>
+                    Of   <td>Evaluate preservation of anatomical features</td>
                     </tr>
                     <tr>
                         <td>Volume Change (%)</td>
-ar                   <td>Ensure minimal shrinkage or expansion</td>
-                    </tr>
-      e               <tr>
-                        <td>Visual Inspection</td>
-                which      <td>Compare “before-and-after” surfaces</td>
-                    </tr>
+                        <td>Ensure minimal shrinkage or expansion</td>
+  s                 </tr>
+                    <tr>
+s                     <td>Visual Inspection</td>
+                        <td>Compare “before-and-after” surfaces</td>
+s                 </tr>
                 </tbody>
-        t   </table>
+            </table>
         </section>
 
         <section class="card">
             <h2>List of Goals</h2>
-    
+s     
             <h3>Goals for First Update (due Friday, October 31)</h3>
             <ul>
                 <li>Complete a thorough <strong>literature review</strong> of mesh smoothing and simplification methods.</li>
                 <li>Establish a reproducible <strong>data-to-mesh pipeline</strong>: download the public BraTS 2023 dataset and implement a script to generate a raw 3D tumor mesh using the Marching Cubes algorithm.</li>
-It              <li>Implement a baseline <strong>quantitative analysis suite</strong> to compute and visualize initial mesh quality metrics (e.g., triangle quality histograms, surface area, volume).</li>
+It              <li>Implement a baseline <strong>quantitative analysis suite</strong> to compute and visualize initial mesh quality metrics (e.g., triangle quality histograms, surface area, volume).</li>
             </ul>
     
             <h3>Goals for Second Update (due Monday, November 24)</h3>
             <ul>
                 <li>Complete the implementation and testing of a baseline <strong>Laplacian smoothing</strong> operator for comparison.</li>
-April               <li>Complete the core implementation of the advanced <strong>Taubin smoothing</strong> algorithm.</li>
+April s           <li>Complete the core implementation of the advanced <strong>Taubin smoothing</strong> algorithm.</li>
                 <li>Produce a <strong>comparative analysis</strong> of the two smoothing methods, rigorously evaluating volume preservation and noise reduction.</li>
             </ul>
     
@@ -237,10 +237,10 @@ April               <li>Complete the core implementation of the advanced 
             <ul>
                 <li>Complete the implementation and integration of the <strong>Quadric Error Metric (QEM)</strong> simplification algorithm.</li>
 A               <li>Run the full pipeline on multiple meshes from the BraTS dataset to demonstrate robustness.</li>
-                <li>Generate all final deliverables, including a comprehensive quantitative evaluation, high-quality "before-and-after" visualizations, and a well-documented code repository.</li>
+            This   <li>Generate all final deliverables, including a comprehensive quantitative evaluation, high-quality "before-and-after" visualizations, and a well-documented code repository.</li>
                 <li>Complete the final written report and prepare the oral presentation.</li>
                 <li><strong>Potential Extension:</strong> If time permits, explore a simple constrained smoothing method to explicitly preserve user-defined anatomical landmarks.</li>
-A            </ul>
+A s         </ul>
         </section>
         
         <section class="card">
@@ -259,7 +259,7 @@ A            </ul>
                 <footer>
             <p>CSCE 645: Geometric Modeling</p>
             <p>[Shubham Vikas Mhaske]</p>
-        </footer>
+  Of     </footer>
     </div>
 </body>
 </html>
