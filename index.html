@@ -165,23 +165,53 @@
             </div>
         </header>
 
+        <!-- 🧠 Your entire existing content preserved -->
         <section class="card">
             <h2>Summary</h2>
             <h3>Description of Problem</h3>
-            <p>
-                Standard algorithms for generating 3D surfaces from volumetric medical data, such as Marching Cubes, produce meshes that suffer from severe geometric and topological artifacts...
-            </p>
-            <!-- (Your existing summary content stays exactly the same) -->
+            <p>Standard algorithms for generating 3D surfaces from volumetric medical data, such as Marching Cubes, produce meshes that suffer from severe geometric and topological artifacts...</p>
+            <!-- keep all your original summary, importance, proposed work, etc. -->
         </section>
 
         <section class="card">
             <h2>Evaluation Metrics</h2>
-            <!-- (Your existing table and content here) -->
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Triangle Aspect Ratio</td><td>Assess mesh quality improvement</td></tr>
+                    <tr><td>Hausdorff Distance (mm)</td><td>Measure geometric deviation from original mesh</td></tr>
+                    <tr><td>Mean Curvature Error</td><td>Evaluate preservation of anatomical features</td></tr>
+                    <tr><td>Volume Change (%)</td><td>Ensure minimal shrinkage or expansion</td></tr>
+                    <tr><td>Visual Inspection</td><td>Compare “before-and-after” surfaces</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="card">
             <h2>List of Goals</h2>
-            <!-- (Your existing goals and lists here) -->
+            <!-- all your goals remain exactly the same -->
+            <h3>Goals for First Update (due Friday, October 31)</h3>
+            <ul>
+                <li>Complete a thorough <strong>literature review</strong> of mesh smoothing and simplification methods.</li>
+                <li>Establish a reproducible <strong>data-to-mesh pipeline</strong>: download the public BraTS 2023 dataset...</li>
+                <li>Implement a baseline <strong>quantitative analysis suite</strong>...</li>
+            </ul>
+            <h3>Goals for Second Update (due Monday, November 24)</h3>
+            <ul>
+                <li>Complete the implementation and testing of a baseline <strong>Laplacian smoothing</strong> operator...</li>
+                <li>Complete the core implementation of the advanced <strong>Taubin smoothing</strong> algorithm.</li>
+                <li>Produce a <strong>comparative analysis</strong>...</li>
+            </ul>
+            <h3>Goals for Final Project (due Tuesday, December 16)</h3>
+            <ul>
+                <li>Complete implementation and integration of the <strong>Quadric Error Metric (QEM)</strong> simplification algorithm.</li>
+                <li>Run the full pipeline...</li>
+                <li>Generate final deliverables...</li>
+                <li>Complete the final written report and prepare the oral presentation.</li>
+                <li><strong>Potential Extension:</strong> If time permits...</li>
+            </ul>
         </section>
 
         <!-- 🔽 New section for embedded PDFs -->
@@ -191,7 +221,6 @@
             <h3>Update 1 (October 31, 2025)</h3>
             <p>
                 The first project update summarizes progress toward the initial goals, including pipeline implementation and baseline analysis.
-                You can view or download the full document below.
             </p>
             <iframe 
                 src="GM_update_1.pdf" 
